@@ -8,7 +8,6 @@ from django.db import connection
 import datetime
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
-import time
 import pyotp
 import qrcode
 import io
