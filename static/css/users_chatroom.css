@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
+
+.about{
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    justify-content: center;
+}
+.container3{
+    position: relative;   
+    width: 450px;
+    height: 465px;
+    background: var(--text-color);
+    border-radius: 15px;
+    margin-top: 30px;
+    overflow: auto;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+}
+.container3::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.users{
+    padding: 25px 30px;
+}
+.users header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    text-decoration: none;
+    border-bottom: 1.5px solid #e6e6e6;
+}
+.container3 img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.users header .content{
+    display: flex;
+    align-items: center;
+}
+.users header .content img{
+    width: 60px;
+    height: 60px;
+}
+.users header .details{
+    color: #000;
+    margin-left: 15px;
+}
+.users header .details span{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.users .search .text{
+    font-size: 18px;
+    margin-left: 60px;
+    font-family: 'Poppins', sans-serif;
+}
+.users .search input{
+    position: absolute;
+    height: 42px;
+    width: calc(100% - 50px);
+    border: 1.5px solid var(--border-color);
+    background: var(--text-color);
+    padding: 0 13px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+.users .search input.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.users .search button{
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    background: var(--text-color);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.users .search button.active{
+    background: #00fbff;
+}
+.users .search button .img2,
+.users .search button.active .img1{
+    display: none;
+}
+.users .search button.active .img2{
+    display: block;
+    font-size: 24px
+}
+.users .search button i{
+    font-size: 22px;
+}
+.users table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.users table tr{
+    border-top: 1.5px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+}
+.users table td:first-child{
+    padding-right: 5px;
+    display: flex;
+    margin-top: 8px;
+}
+.users table td:first-child a:first-child{
+    margin-right: 15px;
+}
+.users table td a{
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+}
+.users table td a .status-dot{
+    height: 12px;
+    width: 12px;
+    background: #00ff7f;
+    border-radius: 50%;
+}
+.users table td a .status-dot.offline{
+    background: var(--border-color);
+}
+#notfound{
+    align-items: center;
+    display: none;
+    justify-content: center;
+    background: linear-gradient(to right,#00dbde,#fc00ff,#00dbde,#fc00ff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/* ============================================================================================= */
+.main-chatroom{
+    overflow: hidden;
+    height: auto;
+}
+.chat-area header{
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+    justify-content: space-between;
+}
+.chat-area header .back-icon i{
+    font-size: 25px;
+}
+.chat-area header .main-details{
+    display: flex;
+    align-items: center;
+}
+.chat-area header img{
+    height: 45px;
+    width: 45px;
+    margin: 0 17px;
+}
+.chat-area header span{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+.chat-area header form .clear-chat{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.clear-chat .more-options{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+header form .clear-chat .more-options i{
+    position: absolute;
+    font-size: 24px;
+    
+}
+.clear-chat .clearchat-btn{
+    opacity: 0;
+    position: absolute;
+    bottom: -48px;
+    left: 70px;
+    height: 35px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+header form .clear-chat .clearchat-btn::before{
+    content: '';
+    position: absolute;
+    right: 4px;
+    top: -8px;
+    height: 15px;
+    width: 15px;
+    background-color: #00dbde;
+    transform: rotate(45deg);
+}
+.clear-chat .more-options.active ~ .clearchat-btn{
+    left: -88px;
+    opacity: 1;
+}
+header form .clear-chat .clearchat-btn button{
+    border: none;
+    background: #00dbde;
+    color: white;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+}
+.chat-box{
+    height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    text-align: justify;
+    background: #f7f7f7;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%), inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+.chat-box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.chat-box .chat{
+    margin: 15px 0;
+}
+.chat-box .chat p{
+    word-wrap: break-word;
+    padding: 8px 16px;
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%), 0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.chat-box .outgoing{
+    display: flex;
+    align-items: flex-end;
+}
+.chat-box .outgoing img{
+    height: 35px;
+    width: 35px;
+}
+.outgoing .details{
+    margin-right: 10px;
+    margin-left: auto;
+    max-width: calc(100% - 140px);
+}
+.outgoing .details p{
+    background: #98fb98;
+    color: black;
+    border-radius: 18px 18px 0 18px;
+}
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+.chat-box .incoming img{
+    height: 35px;
+    width: 35px;
+}
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 140px);
+}
+.incoming .details p{
+    background: #afeeee;
+    color: black;
+    border-radius: 18px 18px 18px 0;
+}
+.chat-area .typing-area{
+    padding: 10px 15px  3px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+/*.typing-area input{
+    height: 47px;
+    width: calc(100% - 58px);
+    font-size: 18px;
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}*/
+.typing-area .sendmessage{
+    position: relative;
+    width: calc(100% - 58px);
+}
+.typing-area textarea{
+    height: 47px;
+    max-height: 110px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #9e9e9e;
+    padding: 8px 13px;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    resize: none;
+    overflow: hidden; /* Hide scrollbar */
+    transition: height 0.2s; /* Optional: Smooth height transition */
+}
+.typing-area textarea.expanding {
+    height: auto;
+    min-height: 47px;
+    max-height: 110px;
+    overflow-y: auto; /* Show scrollbar when reaching max height */
+}
+.typing-area textarea::-webkit-scrollbar{
+  width: 5px;
+}
+.typing-area button{
+    width: 55px;
+    height: 47px;
+    border: none;
+    outline: none;
+    background: #00a8ff;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+.typing-area button img{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 500px){
+    .users .search .text{
+        margin-left: 30px;
+    }
+    .users .search button i{
+        font-size: 20px;
+    }
+    .container3{ 
+        width: 90%;
+        height: 500px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+    .users{
+        padding: 15px 20px;
+    }
+}
+@media screen and (max-width: 430px){
+    .users .search .text{
+        margin-left: 20px;
+        font-size: 17px;
+    }
+}

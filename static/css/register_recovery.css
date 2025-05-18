@@ -1,0 +1,294 @@
+.about{
+    display: flex;
+    height: 100%;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    background: var(--text-color);
+    padding: 25px 30px;
+    margin-top: 50px;
+    margin-bottom: auto;
+    border-radius: 5px;
+}
+.container .title,
+.container2 .title{
+    position: relative;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    background: -webkit-linear-gradient(45deg, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+.container form .user-details,
+.container2 form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    margin: 15px 0;
+    width: calc(100% / 2 - 20px);
+    height: 47px;
+}
+.user-details .input-box input,
+.user-details .input-box2 input{
+    height: 100%;
+    width: 100%;
+    background-color: var(--text-color);
+    border: 1.5px solid var(--border-color);
+    padding-left: 15px;
+    outline: none;
+    font-size: 19px;
+    transition: 0.4s;
+}
+.input-box input:focus,
+.input-box2 input:focus{
+    border: 1.5px solid var(--link-btn);
+}
+.input-box label, span.show, span.show2,
+.input-box2 label{
+    position: relative;
+    top: -77%;
+    transform: translateY(-50%);
+}
+.input-box label,
+.input-box2 label{
+    left: 15px;
+    pointer-events: none;
+    color: gray;
+    font-size: 18px;
+    transition: all 0.4s;
+}
+span.show{
+    left: 58%;    
+}
+span.show2{
+    left: 63%;    
+}
+span.show, span.show2{
+    color: #111;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    visibility: hidden;
+    font-family: 'Open Sans', sans-serif;   
+}
+.input-box input:valid ~ span.show,
+.input-box input:valid ~ span.show2,
+.input-box2 input:valid ~ span.show2{
+    visibility: visible;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box2 input:focus ~ label,
+.input-box2 input:valid ~ label,
+.input-box2 input:read-only ~ label{
+    top: -58px;
+    padding: 0 5px;
+    background: var(--text-color);
+    font-size: 16px;
+    color: var(--link-btn);
+}
+.select-menu{
+    width: calc(50% - 20px);
+    cursor: pointer;
+    position: relative;
+    margin: 15px 0;
+    height: 47px;
+}
+.select-menu2{
+    width: 100%;
+    margin: 15px 0;
+    height: 47px;
+    cursor: pointer;
+    position: relative;
+}
+.select{
+    background: var(--text-color);
+    height: 100%;
+    padding: 0 15px;
+    color: gray;
+    border: 1.5px solid var(--border-color);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chevron-up{
+    display: none;
+}
+.chevron-down.up{
+    display: none;
+}
+.chevron-up.down{
+    display: block;
+}
+.options-list{
+    position: absolute;
+    width: 100%;
+    background-color: var(--text-color2);
+    border: 1.5px solid silver;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-top: -1px;
+    max-height: 150px;
+    overflow-y: auto;
+    transition: all 0.4s ease;
+    display: none;
+    z-index: 5;
+}
+.options-list::-webkit-scrollbar{
+    width: 0;
+}
+.options-list.active{
+    display: block;
+}
+.option{
+    display: block;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+.option:last-child{
+    border-bottom: none;
+}
+.option::after{
+    content: "\a";
+    white-space: pre;
+}
+.option:hover,
+.option.selected{
+    color: var(--link-btn);
+}
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+.gender-details .category label{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: var(--radio-btn);
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: var(--radio-btn);
+    background: #9b59b6;
+}
+form input[type="radio"]{
+    display: none;
+}
+form .submit-btn{
+    position: relative;
+    height: 45px;
+    margin: 35px 0 10px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+form .submit-btn .inner{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(right,#00dbde,#fc00ff,#00dbde,#fc00ff);
+    transition: all 0.3s ease;
+}
+form .submit-btn:hover .inner{
+    left: 0;
+}
+form .submit-btn input[type="submit"]{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.container2{
+    max-width: 400px;
+    width: 100%;
+    background: var(--text-color);
+    padding: 25px 30px;
+    margin-top: 50px;
+    margin-bottom: auto;
+    border-radius: 5px;
+}
+form .user-details .input-box2{
+    margin: 15px 0;
+    width: 100%;;
+    height: 47px;
+}
+.container2 h2{
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to right,#00dbde,#fc00ff,#00dbde,#fc00ff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@media(max-width: 900px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .gender-details .category{
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-x: hidden;
+        border-bottom: 1px solid silver;
+        margin-bottom: 10px
+    }
+    .container2 form .user-details{
+        max-height: 300px;
+        margin-bottom: 10px
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+    .select-menu,
+    .select-menu2{
+        width: 100%;
+    }
+    .options-list{
+        position: relative;
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="icon" href="{% static 'images/chat.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/history_profilePic.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class="fas fa-bars sidebarOpen"></i>
+            <span class="logo navLogo"><a href="/">My Charts</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="/">My Charts</a></span>
+                    <i class="fas fa-xmark siderbarClose"></i>
+                </div>
+    
+                <ul class="nav-links">
+                    <li><a href="/users">Users</a></li>
+                    <li class="chathostory"><a href="/history">History</a></li>
+                    <li><a href="/change-password">Change Password</a></li>
+                    <li><a href="/change-picture">Change Picture</a></li>
+                    <li><a href="/2fa"  class="active">2FA</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li>
+                        <div class="dark-light">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="darkLight">
+                <div class="dark-light">
+                    <i class="fas fa-sun sun"></i>
+                    <i class="fas fa-moon moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!--  Header End -->
+
+    <!-- Main Content Start -->
+    <div class="about">            
+        <div class="container2">
+            <header>Authenticator</header>
+            <form method="post">
+                {% csrf_token %}
+                {% if has_auth %}
+                    <div class="contents details">
+                        <table>
+                            <tr>
+                                <th>TITLE</th>
+                                <th>DELETE</th>
+                            </tr>
+                            <tr>
+                                <td>Authenticator App</td>
+                                <td><a href="/delete-auth"><i class="fas fa-trash" style="color: #ff0000;"></i></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                {% else %}
+                    <div id="qrimg">
+                        {% if qr_code %}
+                            <img src="{{ qr_code }}" alt="QR Code">
+                        {% else %}
+                            <p>QR code could not be generated.</p>
+                        {% endif %}
+                        <a href="/2fa"><i class="fas fa-arrows-rotate" style="color: #025cf7;"></i></a>
+                    </div>
+                    <div class="recovery">
+                        <p class="note">NOTE: When you added using this QR code then click ADD button</p>
+                    </div>
+                    <div class="submit-btn changepic">
+                        <div class="inner"></div>
+                        <input type="submit" value="ADD">
+                    </div>
+                {% endif %}
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                <script>
+                    alert('{{ message }}');
+                </script>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- Footer Part start -->
+    <footer>
+        <div class="main-content">
+            <div class="left box">
+                <h2>About us</h2>
+                <div class="content">
+                    <p>For providing a chat facility in this application used in a particular organization: Online chat is a form of communication that allows for two-way conversations.</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/satyabrata.panda.3956690?mibextid=ZbWKwL" target="_blank" style="--social-clr: #1877f2;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/__satyabrata__" target="_blank" style="--social-clr: #000000;"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/satya.brata_panda?igsh=MTNuNHBuMXg4MTUyOQ==" target="_blank" style="--social-clr: #c32aa3;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCRwqXSEz4xspk1B1z592-fA" target="_blank" style="--social-clr: #ff0000;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="center box">
+                <h2>Address</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-location-dot icon" style="--all-clr: #1c68b5;"></span>
+                        <span class="text">India</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone icon" style="--all-clr: #000080;"></span>
+                        <span class="text">+91 6371223344</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope icon" style="--all-clr: #ff0000;"></span>
+                        <span class="text">satyabrata&#64;gmail.com</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="right box">
+                <h2>Contact us</h2>
+                <div class="content">
+                    <form action="#">
+                        <div class="email">
+                            <div class="text">Email <span style="color: red;">*</span></div>
+                            <input type="email" required>
+                        </div>
+                        <div class="msg">
+                            <div class="text">Message <span style="color: red;">*</span></div>
+                            <textarea cols="25" rows="2" required></textarea>
+                        </div>
+                        <div class="contact-us-btn">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="center">
+                <span class="credit">Created By <a href="#">Satya</a> | &copy; 2024 All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/header.js' %}"></script>
+</body>
+</html>

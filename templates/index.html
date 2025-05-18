@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="icon" href="{% static 'images/chat.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_home_updatepassword.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class="fas fa-bars sidebarOpen"></i>
+            <span class="logo navLogo"><a href="/">My Charts</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="/">My Charts</a></span>
+                    <i class="fas fa-xmark siderbarClose"></i>
+                </div>
+    
+                <ul class="nav-links">
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contactus">Contact</a></li>
+                    <li>
+                        <div class="dark-light">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="darkLight">
+                <div class="dark-light">
+                    <i class="fas fa-sun sun"></i>
+                    <i class="fas fa-moon moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!--  Header End -->
+
+    <!-- Main Content Start -->
+    <div class="wrapper">
+        <div class="row">
+            <div class="image-section">
+                <img src="{% static 'images/animation.gif' %}" alt="My Image">
+            </div>
+            <div class="content">
+                <h1>Chart with Friends</h1>
+                <h2>Smart Charts</h2>
+                <p>For providing a chat facility in this application used in a particular organization: Online chat is a form of communication that allows for two-way conversations.</p>
+                <div class="buttons">
+                    <a onclick="togglePopup()">Read More</a>
+                </div>
+            </div>
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="contentd">
+                    <div class="close-btn" onclick="togglePopup()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h1>More details about charts</h1>
+                    <p>This chat system project has the option to chat with friends.
+                        Chat application works for multiple users but each user must register with this application. 
+                        After login user can enter into a particular any friend chatroom for a chat.</p>
+                    <p>Manage the details of Chat Application,Online Chat,Smiles Chat,Users,Chat History.
+                        It manages all the information about Chat Application, Chat Profile, Chat History, Chat Application.
+                        The project is totally built at administrative end and thus only the administrator is guaranteed the access.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Footer Part start -->
+    <footer>
+        <div class="main-content">
+            <div class="left box">
+                <h2>About us</h2>
+                <div class="content">
+                    <p>For providing a chat facility in this application used in a particular organization: Online chat is a form of communication that allows for two-way conversations.</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/satyabrata.panda.3956690?mibextid=ZbWKwL" target="_blank" style="--social-clr: #1877f2;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/__satyabrata__" target="_blank" style="--social-clr: #000000;"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/satya.brata_panda?igsh=MTNuNHBuMXg4MTUyOQ==" target="_blank" style="--social-clr: #c32aa3;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCRwqXSEz4xspk1B1z592-fA" target="_blank" style="--social-clr: #ff0000;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="center box">
+                <h2>Address</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-location-dot icon" style="--all-clr: #1c68b5;"></span>
+                        <span class="text">India</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone icon" style="--all-clr: #000080;"></span>
+                        <span class="text">+91 6371223344</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope icon" style="--all-clr: #ff0000;"></span>
+                        <span class="text">satyabrata&#64;gmail.com</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="right box">
+                <h2>Contact us</h2>
+                <div class="content">
+                    <form action="#">
+                        <div class="email">
+                            <div class="text">Email <span style="color: red;">*</span></div>
+                            <input type="email" required>
+                        </div>
+                        <div class="msg">
+                            <div class="text">Message <span style="color: red;">*</span></div>
+                            <textarea cols="25" rows="2" required></textarea>
+                        </div>
+                        <div class="contact-us-btn">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="center">
+                <span class="credit">Created By <a href="#">Satya</a> | &copy; 2024 All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function togglePopup(){
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+    </script>
+    <script src="{% static 'js/header.js' %}"></script>
+</body>
+</html>
