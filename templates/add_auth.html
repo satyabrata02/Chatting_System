@@ -69,10 +69,10 @@
                     <div id="qrimg">
                         {% if qr_code %}
                             <img src="{{ qr_code }}" alt="QR Code">
+                            <a href="/2fa"><i class="fas fa-arrows-rotate" style="color: #025cf7;"></i></a>
                         {% else %}
                             <p>QR code could not be generated.</p>
                         {% endif %}
-                        <a href="/2fa"><i class="fas fa-arrows-rotate" style="color: #025cf7;"></i></a>
                     </div>
                     <div class="recovery">
                         <p class="note">NOTE: When you added using this QR code then click ADD button</p>

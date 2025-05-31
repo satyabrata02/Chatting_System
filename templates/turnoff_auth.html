@@ -86,16 +86,6 @@
                     <input type="submit" value="turn off" onclick="validation()">
                 </div>
             </form>
-            {% if messages %}
-                {% for message in messages %}
-                <script>
-                    alert('{{ message }}');
-                </script>
-                {% endfor %}
-            {% endif %}
-            {% if user_pw %}
-                <h2>Your Password is: {{ user_pw }}</h2>
-            {% endif %}
         </div>
     </div>
     

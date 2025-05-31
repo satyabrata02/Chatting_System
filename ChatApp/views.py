@@ -186,7 +186,7 @@ def delete_auth(request):
     uphoneno = request.session.get('uphoneno')
     user_data = Userreg.objects.get(phoneno=uphoneno)
     user_data.is_set_auth = False
-    user_data.auth_token = ""
+    user_data.auth_token = None
     user_data.save()
     messages.success(request, 'Deleted')
     return redirect('/2fa')
@@ -204,7 +204,7 @@ def turnoff_auth(request):
             
             if user_data.secure_question == question and user_data.answer == answer:
                 user_data.is_set_auth = False
-                user_data.auth_token = ""
+                user_data.auth_token = None
                 user_data.save()
                 messages.success(request, 'Authentication Turned off')
                 return redirect('/login')

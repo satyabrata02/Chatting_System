@@ -24,7 +24,6 @@ urlpatterns = [
     path('about/', views.aboutpage),
     path('register/', views.register),
     path('login/', views.login),
-    path('verify/', views.auth_verify),
     path('logout/', views.logout),
     path('contactus/', views.contactus),
     path('recovery/', views.pw_recovery),
@@ -35,6 +34,7 @@ urlpatterns = [
     path('change-password/', views.update_password),
     path('change-picture/', views.change_pic),
     path('2fa/', views.reg_auth),
+    path('verify/', views.auth_verify),
     path('delete-auth/', views.delete_auth),
     path('turnoff-auth/', views.turnoff_auth),
 ]
